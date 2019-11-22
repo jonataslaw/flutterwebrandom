@@ -5361,7 +5361,8 @@ this.a=c},
 zu:function zu(a,b,c){this.c=a
 this.d=b
 this.a=c},
-rI:function rI(a){this.a=a},
+rI:function rI(a,b){this.c=a
+this.a=b},
 Rp:function Rp(a){this.a=null
 this.b=a
 this.c=null},
@@ -11210,12 +11211,12 @@ _.c=h},
 oy:function oy(){},
 a4b:function(a){var u=null
 switch(a.a){case"/":return O.qo(new F.JK(),!1,a,u)
-case"/procurando":return O.qo(new F.JL(),!1,a,u)
+case"/procurando":return O.qo(new F.JL(a),!1,a,u)
 case"/chat":return O.qo(new F.JM(),!1,a,u)
 default:return O.qo(new F.JN(a),!1,a,u)}},
 FM:function FM(a){this.a=a},
 JK:function JK(){},
-JL:function JL(){},
+JL:function JL(a){this.a=a},
 JM:function JM(){},
 JN:function JN(a){this.a=a},
 qs:function qs(a){this.a=a},
@@ -45566,7 +45567,7 @@ M:function(a){return new S.r1($.V4(),"/",F.a75(),X.Zy(C.Q),!1,null)}}
 F.JK.prototype={
 $1:function(a){return new F.qs(null)}}
 F.JL.prototype={
-$1:function(a){return new Y.rI(null)}}
+$1:function(a){return new Y.rI(this.a.c,null)}}
 F.JM.prototype={
 $1:function(a){return new A.rN(null)}}
 F.JN.prototype={
@@ -45616,8 +45617,7 @@ else if(!!J.w(o.h(0,"query")).$iT)o.l(0,"query",E.X0(o.h(0,"query")))
 q=r.Ex(n.gjP(n).length===0?"/":n.gjP(n),o)
 q.cz(0,"connect",new Y.Rq())
 q.cz(0,"userCount",new Y.Rr())
-s.a.toString
-q.hy("new user",[null])
+q.hy("new user",[s.a.c])
 q.cz(0,"match",new Y.Rs(s,q))
 return P.a4(null,t)}})
 return P.a5($async$pv,t)},
@@ -45635,9 +45635,8 @@ Y.Rr.prototype={
 $1:function(a){P.kc(a)},
 $S:3}
 Y.Rs.prototype={
-$1:function(a){var u=J.a_(a),t=u.h(a,"username"),s=u.h(a,"id")
-this.a.a.toString
-T.a36(new A.rO(t,s,null,this.b,null))},
+$1:function(a){var u=J.a_(a)
+T.a36(new A.rO(u.h(a,"username"),u.h(a,"id"),this.a.a.c,this.b,null))},
 $S:3}
 A.rO.prototype={
 aF:function(){return new A.Rv([],P.Zq([P.v,,]),C.r)}}
@@ -45699,8 +45698,7 @@ t=J.a_(u)
 s=t.h(u,"message")
 r=t.h(u,"user")
 t=this.a
-q=t.a.e
-if(r==null?q!=null:r!==q){q=t.f
+if(r!=t.a.e){q=t.f
 p=P.j
 q.push(P.a1(["message",s,"user",r],p,p))
 t.r.v(0,q)}},
